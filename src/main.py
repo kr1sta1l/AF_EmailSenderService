@@ -1,6 +1,11 @@
 import logging
-import uvicorn
 from src.config import config
+
+logging.basicConfig(level=config.MS_LOG_LEVEL,
+                    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+                    filename=config.MS_LOG_FILE)
+
+import uvicorn
 from src.routers import sender_router
 from fastapi import FastAPI, HTTPException
 from src.exceptions import http_exception_handler
@@ -16,10 +21,6 @@ def configure_app(app: FastAPI) -> None:
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=config.MS_LOG_LEVEL,
-                        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-                        filename=config.MS_LOG_FILE)
-
     app: FastAPI = FastAPI(title="Mail Sender Service")
     configure_app(app)
 
