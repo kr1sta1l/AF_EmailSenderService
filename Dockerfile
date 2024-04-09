@@ -2,6 +2,7 @@ FROM python:3.10
 LABEL authors="kr1sta1l"
 
 COPY src/ /app/src/
+COPY requirements.txt /app/src/requirements.txt
 
 WORKDIR /app
 
