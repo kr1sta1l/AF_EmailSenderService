@@ -5,6 +5,7 @@ COPY src/ /app/src/
 COPY requirements.txt /app/src/requirements.txt
 
 WORKDIR /app
+EXPOSE 8080
 
 ENV PYTHONPATH=/app
 

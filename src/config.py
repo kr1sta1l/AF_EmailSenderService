@@ -10,7 +10,7 @@ class Config(BaseSettings):
     #                                   env_file_encoding='utf-8')
 
     MS_HOST: str = Field("0.0.0.0", validation_alias="MS_HOST", env="MS_HOST")
-    MS_PORT: int = Field(8000, validation_alias="MS_PORT", env="MS_PORT")
+    MS_PORT: int = Field(8080, validation_alias="MS_PORT", env="MS_PORT")
 
     MS_LOG_LEVEL: str = Field("INFO", validation_alias="MS_LOG_LEVEL", env="MS_LOG_LEVEL")
     MS_LOG_FILE: Optional[str] = Field(None, validation_alias="MS_LOG_FILE", env="MS_LOG_FILE")
